@@ -1,0 +1,220 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.wutp</groupId>
+  <artifactId>berry2.0</artifactId>
+  <packaging>war</packaging>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>berry2.0 Maven Webapp</name>
+  <url>http://maven.apache.org</url>
+  
+  <properties> 
+  	<spring.version>4.1.1.RELEASE</spring.version>
+  	<hibernate.version>4.2.2.Final</hibernate.version>
+    <mysql-connector-java.version>5.1.36</mysql-connector-java.version>
+    <dom4j.version>1.6.1</dom4j.version>
+    <log4j.version>1.2.17</log4j.version>
+    <slf4j.version>1.7.7</slf4j.version>
+  </properties>
+    
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+    
+       <!-- 1:日志接口 -->
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+      <version>1.7.12</version>
+    </dependency>
+    <dependency>
+    <groupId>ch.qos.logback</groupId>
+    <artifactId>logback-core</artifactId>
+    <version>1.1.1</version>
+    </dependency>
+    <!--日志实现-->
+    <dependency>
+      <groupId>ch.qos.logback</groupId>
+      <artifactId>logback-classic</artifactId>
+      <version>1.1.1</version>
+    </dependency>
+
+    <!-- 2:数据库 -->
+    <dependency>
+      <groupId>mysql</groupId>
+      <artifactId>mysql-connector-java</artifactId>
+      <version>5.1.35</version>
+      <scope>runtime</scope>
+    </dependency>
+    <!-- <dependency>
+      <groupId>c3p0</groupId>
+      <artifactId>c3p0</artifactId>
+      <version>0.9.1.2</version>
+    </dependency> -->
+    
+    <dependency>
+        <groupId>com.zaxxer</groupId>
+        <artifactId>HikariCP</artifactId>
+        <version>2.4.5</version>
+    </dependency>
+
+    <!--DAO-->
+    <!-- <dependency>
+      <groupId>org.mybatis</groupId>
+      <artifactId>mybatis</artifactId>
+      <version>3.3.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.mybatis</groupId>
+      <artifactId>mybatis-spring</artifactId>
+      <version>1.2.3</version>
+    </dependency> -->
+    <!-- hibernate -->
+	<dependency>
+	  <groupId>org.hibernate</groupId>
+	  <artifactId>hibernate-core</artifactId>
+	  <version>${hibernate.version}</version>
+	</dependency>
+	<dependency>
+    	<groupId>org.hibernate</groupId>
+    	<artifactId>hibernate-entitymanager</artifactId>
+    	<version>${hibernate.version}</version>
+	</dependency>	        
+
+    <!-- 3:servlet-web -->
+    <dependency>
+      <groupId>taglibs</groupId>
+      <artifactId>standard</artifactId>
+      <version>1.1.2</version>
+    </dependency>
+    <dependency>
+      <groupId>jstl</groupId>
+      <artifactId>jstl</artifactId>
+      <version>1.2</version>
+    </dependency>
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-databind</artifactId>
+      <version>2.5.4</version>
+    </dependency>
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>javax.servlet-api</artifactId>
+      <version>3.1.0</version>
+    </dependency> 
+
+    <!--4:spring-->
+    <!--1)spring-core-->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-core</artifactId>
+      <version>${spring.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-beans</artifactId>
+      <version>${spring.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-context</artifactId>
+      <version>${spring.version}</version>
+    </dependency>
+    <!--2)spring-dao-->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-jdbc</artifactId>
+      <version>${spring.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-tx</artifactId>
+      <version>${spring.version}</version>
+    </dependency>
+    <!--3)spring-web-->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-web</artifactId>
+      <version>${spring.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-webmvc</artifactId>
+      <version>${spring.version}</version>
+    </dependency> 
+
+    <!--4)spring-test-->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-test</artifactId>
+      <version>${spring.version}</version>
+	</dependency>
+	
+	<dependency>
+	   <groupId>org.springframework.security</groupId>
+	   <artifactId>spring-security-core</artifactId>
+	   <version>${spring.version}</version>
+    </dependency>
+    
+    <dependency>
+    	<groupId>org.springframework.security</groupId>
+    	<artifactId>spring-security-config</artifactId>
+    	<version>${spring.version}</version>
+	</dependency>
+	
+	<dependency>
+    	<groupId>org.springframework.security</groupId>
+    	<artifactId>spring-security-taglibs</artifactId>
+    	<version>${spring.version}</version>
+	</dependency>
+
+    <dependency>
+	   <groupId>org.springframework.data</groupId>
+	   <artifactId>spring-data-jpa</artifactId>
+	   <version>1.7.0.RELEASE</version>
+	</dependency>
+	
+	<dependency>
+       <groupId>javax.validation</groupId>
+       <artifactId>validation-api</artifactId>
+       <version>1.1.0.Final</version>
+	</dependency>
+	
+	<dependency>
+	    <groupId>javax.mail</groupId>
+	    <artifactId>javax.mail-api</artifactId>
+	    <version>1.4.5</version>
+	</dependency>
+	
+  </dependencies>
+  <build>
+    <finalName>berry2.0</finalName>
+    <plugins>  
+        <plugin> 
+        	<groupId>org.apache.tomcat.maven</groupId>
+          	<artifactId>tomcat7-maven-plugin</artifactId>
+          	<version>2.2</version> 
+            <!-- <executions>
+            	<execution>
+            		<phase>package</phase>
+            		<goals>
+            			<goal>run</goal>
+            		</goals>
+            	</execution>
+            </executions> -->
+            <!-- <groupId>org.codehaus.mojo</groupId>  
+            <artifactId>tomcat-maven-plugin</artifactId>  
+            <configuration>  
+                <warFile>target/berry2.0.war</warFile>  
+                <server>tomcat</server>  
+                <url>http://localhost:8080/manager/text</url>  
+                <path>/transition</path>  
+            </configuration>   -->
+        </plugin>  
+    </plugins>
+  </build>
+</project>

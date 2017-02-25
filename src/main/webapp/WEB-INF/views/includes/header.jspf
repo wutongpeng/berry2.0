@@ -1,0 +1,29 @@
+<%@page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
+<nav class="header">
+    <a href="<c:url value="/"/>">
+        <img width="200" height="60" src="<c:url value="/images/header/berry-logo.png"/>">
+    </a>
+    <div class="header-admin">
+        
+            <div class="admin">
+                <span>欢迎，<%=request.getSession().getAttribute("loginname")%></span>
+                <c:url var="logoutUrl" value="/login"/>
+                
+                <span><a href="/logout">退出</a></span>
+                
+            </div>
+        
+
+        <div id="fat-menu" class="setting dropdown">
+            <a id="drop3" href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <img src="<c:url value="/images/header/setting.png"/>">
+            </a>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="drop3">
+                <li><a href="${pageContext.request.contextPath}/user/edituserform" target="_blank">个人设置</a></li>
+                <li role="presentation" class="divider"></li>
+                <li><a href="${pageContext.request.contextPath}/user/updatepasswordform" target="_blank">密码设置</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
